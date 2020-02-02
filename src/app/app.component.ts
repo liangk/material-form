@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MysqlDB } from './model';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'material-form';
+
+  connect() {
+    const db = new MysqlDB();
+    db.connect();
+    db.close();
+  }
 }
